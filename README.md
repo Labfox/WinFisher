@@ -15,7 +15,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#background">Background</a></li>
+        <li><a href="#what-is-it">What Is It</a></li>
+        <li><a href="#background-and-usecase-scenario">Background and UseCase Scenario</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -24,6 +25,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#compiling">Compiling</a></li>
+        <li><a href="#active-directory-environment">Active Directory Environment</a></li>
         <li><a href="#note">Note</a></li>
       </ul>
     </li>
