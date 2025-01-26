@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -95,8 +96,8 @@ namespace WinFisher
 
             // Fill UserName
             // Sets the user name text blocks to the user's full name in uppercase
-            txtblk_userName.Text = GetFullName().ToUpper();
-            txtblk_userNameS.Text = GetFullName().ToUpper();
+            txtblk_userName.Text = GetFullName();
+        
 
             // Set current date and time
             // Updates the date and time text blocks with the current date and time
@@ -108,7 +109,7 @@ namespace WinFisher
             // Create a new DispatcherTimer object for updating time every minute
             timer = new DispatcherTimer();
             // Set the interval to 1 minute (60 sec)
-            timer.Interval = TimeSpan.FromSeconds(60);
+            timer.Interval = TimeSpan.FromSeconds(30);
             // Attach an event handler to the Tick event to update time
             timer.Tick += (sndr, evnt) =>
             {
@@ -204,6 +205,29 @@ namespace WinFisher
         ///////////////////////////////////////////////////
 
         /////////////EVENTS///////////////////
+
+
+        private void UserPanel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Example: Change the background color of the user panel on hover
+            if (sender is StackPanel hoveredPanel)
+            {
+                hoveredPanel.Background = new SolidColorBrush(Color.FromRgb(155, 187, 219));
+            }
+        }
+
+        private void UserPanel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // Example: Reset the background color of the user panel when mouse leaves
+            if (sender is StackPanel hoveredPanel)
+            {
+                hoveredPanel.Background = new SolidColorBrush(Color.FromRgb(69, 162, 255)); // #4444ff color
+            }
+        }
+
+
+
+
         private void image_submitIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // Trigger authentication when submit icon is clicked

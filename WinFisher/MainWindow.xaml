@@ -58,7 +58,7 @@
 
             <Border BorderBrush="White" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
-                    <PasswordBox x:Name="pswrdBx_password" KeyDown="pswrdBx_password_KeyDown" FontSize="14" Height="35" Width="300" VerticalContentAlignment="Center" />
+                    <PasswordBox x:Name="pswrdBx_password" KeyDown="pswrdBx_password_KeyDown" FontSize="14" Height="35" Width="300" Padding="3" VerticalContentAlignment="Center" />
                     <Image x:Name="image_submitIcon" MouseLeftButtonDown="image_submitIcon_MouseLeftButtonDown" Source="imgs/si.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" StretchDirection="Both"/>
                 </StackPanel>
             </Border>
@@ -67,24 +67,18 @@
         </StackPanel>
 
         <!--List of Users-->
-        <StackPanel Visibility="Hidden" Opacity="0" x:Name="stkpnl_usersList" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10, 0,0,10">
-            <StackPanel Orientation="Horizontal" Background="#4444ff"  x:Name="stkpnl_user">
+        <StackPanel x:Name="stkpnl_usersList" Visibility="Hidden" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10, 0, 0, 10">
+
+            <StackPanel Orientation="Horizontal" Background="#4444ff" MouseEnter="UserPanel_MouseEnter" x:Name="stkpnl_user" MouseLeave="UserPanel_MouseLeave">
                 <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" CornerRadius="20" Margin="10, 10, 13, 10">
                     <Border.Background>
                         <ImageBrush Stretch="Fill" ImageSource="imgs/user1.png"/>
                     </Border.Background>
                 </Border>
-                <TextBlock x:Name="txtblk_userNameS" Text="JHONATHON MIKE" Foreground="white" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" CornerRadius="20" Margin="10, 10, 13, 10">
-                    <Border.Background>
-                        <ImageBrush Stretch="Fill" ImageSource="imgs/user1.png"/>
-                    </Border.Background>
-                </Border>
-                <TextBlock Text="Other user" Foreground="white" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBlock Text="Other user" Foreground="white" FontSize="14" VerticalAlignment="Center" Margin="0, 0, 10, 0" />
             </StackPanel>
         </StackPanel>
+
 
         <!--Bottom right icons-->
         <StackPanel x:Name="stkpnl_bottomIcons" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="15">
